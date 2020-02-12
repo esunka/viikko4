@@ -1,1 +1,1 @@
-cp -R ../syksy2019/koodi/viikko4/Verkkokauppa Verkkokauppa
+cp -R ../syksy2019/koodi/viikko4/IntJoukkoSovellus Sovellus
