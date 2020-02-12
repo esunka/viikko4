@@ -3,6 +3,7 @@ apply plugin: 'java'
 
 apply plugin: 'application'
 
+apply plugin: "jacoco"
 repositories {
     jcenter()
 }
@@ -21,4 +22,17 @@ mainClassName = 'ohtu.Main'
 
 run {
     standardInput = System.in
+}
+
+jacocoTestReport {
+    reports {
+        xml.enabled true
+        html.enabled true
+    }
+    afterEvaluate {
+        classDirectories.from = files(classDirectories.files.collect {
+            fileTree(dir: it,
+                     exclude: ['ohtu/App**', 'ohtu/Main**'])
+        })
+    }
 }
