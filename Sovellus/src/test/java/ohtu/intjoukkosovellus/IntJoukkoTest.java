@@ -4,14 +4,14 @@ import java.util.Arrays;
 import org.junit.Before;
 import org.junit.Test;
 import static org.junit.Assert.*;
-
+import java.util.ArrayList;
 public class IntJoukkoTest {
 
     IntJoukko joukko;
 
     @Before
     public void setUp() {
-        joukko = new IntJoukko(5,5);
+        joukko = new IntJoukko();
         joukko.lisaa(10);
         joukko.lisaa(3);
     }
@@ -45,13 +45,13 @@ public class IntJoukkoTest {
     
     @Test
     public void palautetaanOikeaTaulukko() {
-        int[] odotettu = {3, 55, 99};
+        Integer[] odotettu = {3, 55, 99};
         
         joukko.lisaa(55);
         joukko.poista(10);
         joukko.lisaa(99);
 
-        int[] vastaus = joukko.toIntArray();
+        Integer[] vastaus = joukko.toIntArray();
         Arrays.sort(vastaus);
         assertArrayEquals(odotettu, vastaus);
     }
@@ -77,14 +77,14 @@ public class IntJoukkoTest {
     
     @Test
     public void toStringToimiiYhdenKokoiselleJoukolla(){
-        joukko = new IntJoukko(5,5);
+        joukko = new IntJoukko();
         joukko.lisaa(1);
         assertEquals("{1}", joukko.toString());
     }
 
     @Test
     public void toStringToimiiTyhjallaJoukolla(){
-        joukko = new IntJoukko(5,5);
+        joukko = new IntJoukko();
         assertEquals("{}", joukko.toString());
     }     
 }

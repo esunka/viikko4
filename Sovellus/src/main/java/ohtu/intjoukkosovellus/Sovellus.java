@@ -1,5 +1,5 @@
 package ohtu.intjoukkosovellus;
-
+import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Sovellus {
@@ -108,9 +108,9 @@ public class Sovellus {
     }
 
     public static void main(String[] args) {
-        A = new IntJoukko(5,5);
-        B = new IntJoukko(5,5);
-        C = new IntJoukko(5,5);
+        A = new IntJoukko();
+        B = new IntJoukko();
+        C = new IntJoukko();
         String luettu;
 
         System.out.println("Tervetuloa joukkolaboratorioon!");

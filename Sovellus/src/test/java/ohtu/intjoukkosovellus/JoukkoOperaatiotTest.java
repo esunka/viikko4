@@ -5,7 +5,7 @@ import java.util.Arrays;
 import org.junit.Before;
 import org.junit.Test;
 import static org.junit.Assert.*;
-
+import java.util.ArrayList;
 public class JoukkoOperaatiotTest {
     @Test
     public void testYhdiste() {
@@ -13,10 +13,10 @@ public class JoukkoOperaatiotTest {
         IntJoukko toka = teeJoukko(3,4);
         
         IntJoukko tulos = IntJoukko.yhdiste(eka, toka);
-        int[] vastauksenLuvut = tulos.toIntArray();
+        Integer[] vastauksenLuvut = tulos.toIntArray();
         Arrays.sort(vastauksenLuvut);
         
-        int[] odotettu = {1,2,3,4};
+        Integer[] odotettu = {1,2,3,4};
         
         assertArrayEquals(odotettu, vastauksenLuvut);        
     } 
@@ -27,10 +27,10 @@ public class JoukkoOperaatiotTest {
         IntJoukko toka = teeJoukko(2,3,4);
         
         IntJoukko tulos = IntJoukko.leikkaus(eka, toka);
-        int[] vastauksenLuvut = tulos.toIntArray();
+        Integer[] vastauksenLuvut = tulos.toIntArray();
         Arrays.sort(vastauksenLuvut);
         
-        int[] odotettu = {2};
+        Integer[] odotettu = {2};
         
         assertArrayEquals(odotettu, vastauksenLuvut);        
     }     
@@ -41,18 +41,18 @@ public class JoukkoOperaatiotTest {
         IntJoukko toka = teeJoukko(2,3,4);
         
         IntJoukko tulos = IntJoukko.erotus(eka, toka);
-        int[] vastauksenLuvut = tulos.toIntArray();
+        Integer[] vastauksenLuvut = tulos.toIntArray();
         Arrays.sort(vastauksenLuvut);
         
-        int[] odotettu = {1, 5, 6};
+        Integer[] odotettu = {1, 5, 6};
         
         assertArrayEquals(odotettu, vastauksenLuvut);        
     }  
 
-    private IntJoukko teeJoukko(int... luvut) {
-        IntJoukko joukko = new IntJoukko(5,5);
+    private IntJoukko teeJoukko(Integer... luvut) {
+        IntJoukko joukko = new IntJoukko();
         
-        for (int luku : luvut) {
+        for (Integer luku : luvut) {
             joukko.lisaa(luku);
         }
         
