@@ -1,0 +1,1 @@
+cp -R ../syksy2019/koodi/viikko3/nhlreader nhlreader
